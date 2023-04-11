@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= sym %> Stock Price Prediction</title>
+  </head>
+  <body>
+    <h1> <%= sym %> Stock Price Prediction Using CV</h1>
+    <div>
+      <script type="text/javascript">
+        source = "/cv/<%= sym %>/";
+        function prepareFrame(i) { 
+            var ifrm = document.createElement("iframe");
+            ifrm.setAttribute("src", source+i+".html");
+            ifrm.style.width = "1500px";
+            ifrm.style.height = "500px";
+            document.body.appendChild(ifrm);
+        }
+        for(var i=19; i>=0; i--){
+          prepareFrame(i);
+        }
+    </script> 
+    </div>
+  </body>
+</html>

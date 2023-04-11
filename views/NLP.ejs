@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= sym %> NLP Sentimental Analysis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1> <%= sym %> NLP Sentimental Analysis</h1>
+      <img src="/nlp/<%= sym %>.png" frameborder="2px" width="1000px" height="600px">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Article Title</th>
+            <th>Published Date</th>
+            <th>Relevance Score</th>
+            <th>Overall Sentiment Score</th>
+            <!-- Add more columns here as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach((row) => { %>
+            <tr>
+              <td><%= row.ticker %></td>
+              <td><%= row.title %></td>
+              <td><%= row.time_published %></td>
+              <td><%= row.relevance_score %></td>
+              <td><%= row.overall_sentiment_score %></td>
+              <!-- Add more columns here as needed, using the correct column names from your CSV file -->
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
